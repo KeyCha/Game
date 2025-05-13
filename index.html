@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Викторина</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div id="nickname-container">
+      <h2>Введите никнейм:</h2>
+      <input type="text" id="nickname-input" maxlength="20" />
+      <button onclick="startGame()">Начать</button>
+    </div>
+
+    <div id="game-container" style="display:none;">
+      <h2 id="nickname-display"></h2>
+      <div id="question">Вопрос загружается...</div>
+      <div id="options"></div>
+      <div id="timer">⏱ Время: <span id="time-left"></span> сек</div>
+      <div id="score">Очки: <span id="score-value">0</span></div>
+    </div>
+
+    <div id="game-over" style="display:none;">
+        <div id="log-container">
+  <h3>Журнал результатов:</h3>
+  <ul id="log-list"></ul>
+</div>
+
+      <h2>Игра окончена!</h2>
+      <p id="final-score"></p>
+      <button onclick="retry()">Играть снова</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

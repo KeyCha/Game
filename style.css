@@ -1,0 +1,57 @@
+body {
+  font-family: sans-serif;
+  background: #222;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+#options button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  width: 80%;
+  background-color: #333;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#options button:hover {
+  background-color: #555;
+}
+
+input {
+  padding: 8px;
+  width: 70%;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+#log-container {
+  margin-top: 20px;
+  text-align: left;
+  background: #111;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#log-list {
+  list-style: none;
+  padding-left: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+#log-list li {
+  margin-bottom: 5px;
+  color: #ccc;
+}
