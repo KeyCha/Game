@@ -1,9 +1,15 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
 body {
   font-family: sans-serif;
-  /* background: #222; */
   background-image: url(https://avatars.mds.yandex.net/i?id=481b8ec37740ec320d2655ce9ad0f126_l-5300391-images-thumbs&n=13);
   color: #fff;
-  background-position: -5% center;
+  background-color: #7b00ff;
   display: flex;
   justify-content: center;
   align-items: center;
