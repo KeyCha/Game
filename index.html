@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Викторина</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+
+<body background="url(blob:https://web.telegram.org/3d02123f-bbe9-4c4f-aa1c-5579be3b297d)">
+
   <div class="container">
     <div id="nickname-container">
       <h2>Введите никнейм:</h2>
       <input type="text" id="nickname-input" maxlength="20" />
-      <button onclick="startGame()">Начать</button>
+      <button class="btn game-starter" onclick="startGame()">Начать</button>
     </div>
 
     <div id="game-container" style="display:none;">
@@ -23,17 +26,17 @@
     </div>
 
     <div id="game-over" style="display:none;">
-        <div id="log-container">
-  <h3>Журнал результатов:</h3>
-  <ul id="log-list"></ul>
-</div>
-
+      <div id="log-container">
+        <h3>Журнал результатов:</h3>
+        <ul id="log-list"></ul>
+      </div>
       <h2>Игра окончена!</h2>
       <p id="final-score"></p>
-      <button onclick="retry()">Играть снова</button>
+      <button class="btn" onclick="retry()">Играть снова</button>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>
