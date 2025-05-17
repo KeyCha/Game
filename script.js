@@ -1,3 +1,238 @@
-console.log("%cЗачем ты сюда зашел?", "color: red; font-size: 30px; font-weight: bold;");
+(function () {
+  const questionSetOriginal = [
+    { q: "Что изучает теоретическая физика?", options: ["Правописание слов", "Законы природы с помощью математики", "Историю древнего мира", "Строение живых организмов"], answer: 1 },
+    { q: "Какой физик известен своим котом, который и жив, и мёртв?", options: ["Ньютон", "Эйнштейн", "Шредингер", "Гейзенберг"], answer: 2 },
+    { q: "Что такое 'сингулярность'?", options: ["Обычная точка в пространстве", "Частица со вкусом", "Точка бесконечной плотности", "Тип антенны"], answer: 2 },
+    { q: "Что невозможно по специальной теории относительности?", options: ["Разогнаться до скорости света", "Двигаться с постоянной скоростью", "Быть в покое", "Измерить расстояние"], answer: 0 },
+    { q: "Что показывает уравнение Эйнштейна E = mc²?", options: ["Сила удара", "Плотность вещества", "Связь массы и энергии", "Скорость света"], answer: 2 },
+    { q: "Что такое квант?", options: ["Кусок льда", "Миниатюрный автомобиль", "Минимальная порция физической величины", "Вид молекулы"], answer: 2 },
+    { q: "Кто предложил идею мультивселенной?", options: ["Пифагор", "Хокинг", "Хью Эверетт III", "Нильс Бор"], answer: 2 },
+    { q: "Как называется частица-переносчик света?", options: ["Электрон", "Нейтрон", "Протон", "Фотон"], answer: 3 },
+    { q: "Что означает 'суперпозиция' в квантовой физике?", options: ["Сложный музыкальный аккорд", "Одновременное пребывание в нескольких состояниях", "Замедление времени", "Перемещение в пространстве"], answer: 1 },
+    { q: "Какой физик придумал общую теорию относительности?", options: ["Стивен Хокинг", "Альберт Эйнштейн", "Исаак Ньютон", "Макс Планк"], answer: 1 },
+    { q: "Где могут существовать червоточины, согласно теории?", options: ["В океане", "В строении атома", "В пространстве-времени", "В облаках"], answer: 2 },
+    { q: "Что изучает квантовая механика?", options: ["Большие объекты", "Метеорологию", "Поведение микрочастиц", "Биохимию"], answer: 2 },
+    { q: "Как называется гипотетическая частица, переносящая гравитацию?", options: ["Электрон", "Глюон", "Гравитон", "Мюон"], answer: 2 },
+    { q: "Что такое бозон Хиггса?", options: ["Вид газа", "Частица, придающая массу другим", "Лунный камень", "Бозон, создающий антивещество"], answer: 1 },
+    { q: "Какой из этих принципов связан с невозможностью точно измерить координату и импульс частицы?", options: ["Принцип суперпозиции", "Принцип неопределённости Гейзенберга", "Принцип Архимеда", "Закон Ома"], answer: 1 },
+    { q: "Что происходит с временем при приближении к чёрной дыре?", options: ["Оно ускоряется", "Оно замедляется", "Оно исчезает", "Оно становится отрицательным"], answer: 1 },
+    { q: "Что такое теория струн?", options: ["Музыкальная теория", "Теория, в которой элементарные частицы — крошечные струны", "Астрономическая карта", "Модель планетной орбиты"], answer: 1 },
+    { q: "Что может быть аннигилировано с электроном?", options: ["Протон", "Нейтрон", "Позитрон", "Кварк"], answer: 2 },
+    { q: "Какая сила самая слабая, но действует на огромных расстояниях?", options: ["Электромагнитная", "Ядерная сильная", "Слабая", "Гравитационная"], answer: 3 },
+    { q: "Как называется состояние, когда вещество охлаждено почти до абсолютного нуля и ведёт себя как одно квантовое целое?", options: ["Газ Ньютона", "Конденсат Бозе — Эйнштейна", "Квантовая пена", "Плазма Хокинга"], answer: 1 }
+  ];
 
-const _0x2285=['Какой\x20из\x20этих\x20принципов\x20связан\x20с\x20невозможностью\x20точно\x20измерить\x20координату\x20и\x20импульс\x20частицы?','game-over','Какой\x20физик\x20придумал\x20общую\x20теорию\x20относительности?','Хокинг','game-container','Кто\x20предложил\x20идею\x20мультивселенной?','Скорость\x20света','Что\x20такое\x20\x27сингулярность\x27?','toString','error','outerWidth','Оно\x20становится\x20отрицательным','value','Что\x20такое\x20бозон\x20Хиггса?','slice','setItem','getMonth','console','log-list','4wtYRoD','Что\x20может\x20быть\x20аннигилировано\x20с\x20электроном?','addEventListener','Хью\x20Эверетт\x20III','Измерить\x20расстояние','display','stringify','none','info','toFixed','options','960352HXQMbb','textContent','innerWidth','__proto__','test','gameLogs','В\x20облаках','Кварк','onclick','final-score','retry','Фотон','801FQomGD','Гейзенберг','Альберт\x20Эйнштейн','Разогнаться\x20до\x20скорости\x20света','Ньютон','floor','Как\x20называется\x20состояние,\x20когда\x20вещество\x20охлаждено\x20почти\x20до\x20абсолютного\x20нуля\x20и\x20ведёт\x20себя\x20как\x20одно\x20квантовое\x20целое?','Где\x20могут\x20существовать\x20червоточины,\x20согласно\x20теории?','^([^\x20]+(\x20+[^\x20]+)+)+[^\x20]}','style','Плазма\x20Хокинга','appendChild','Электрон','from','Что\x20невозможно\x20по\x20специальной\x20теории\x20относительности?','Квантовая\x20пена','44538ZoExph','Законы\x20природы\x20с\x20помощью\x20математики','Что\x20показывает\x20уравнение\x20Эйнштейна\x20E\x20=\x20mc²?','Биохимию','getSeconds','return\x20/\x22\x20+\x20this\x20+\x20\x22/','getFullYear','warn','resize','Игрок:\x20','Принцип\x20Архимеда','Какая\x20сила\x20самая\x20слабая,\x20но\x20действует\x20на\x20огромных\x20расстояниях?','Астрономическая\x20карта','Макс\x20Планк','867514cPtjDU','Кусок\x20льда','Исаак\x20Ньютон','getItem','В\x20строении\x20атома','1499QusJrn','innerHeight','startGame','table','Вид\x20газа','answer','children','Одновременное\x20пребывание\x20в\x20нескольких\x20состояниях','Замедление\x20времени','nickname-container','Гравитон','Мюон','match','Что\x20такое\x20квант?','score-value','Шредингер','Минимальная\x20порция\x20физической\x20величины','getDate','return\x20(function()\x20','Вид\x20молекулы','Что\x20такое\x20теория\x20струн?','nickname-input','\x20очков','splice','Позитрон','Точка\x20бесконечной\x20плотности','map','787916lvkLqW','Тип\x20антенны','length','Лунный\x20камень','Протон','profile','Пифагор','profileEnd','Ядерная\x20сильная','getElementById','Плотность\x20вещества','\x20очков!','Нейтрон','createElement','disabled','1177jHsqjt','Музыкальная\x20теория','getHours','random','Быть\x20в\x20покое','Теория,\x20в\x20которой\x20элементарные\x20частицы\x20—\x20крошечные\x20струны','192606PzWlUK','241PExLCL','Как\x20называется\x20гипотетическая\x20частица,\x20переносящая\x20гравитацию?','Частица\x20со\x20вкусом','forEach','Как\x20называется\x20частица-переносчик\x20света?','block','question','В\x20океане','Что\x20означает\x20\x27суперпозиция\x27\x20в\x20квантовой\x20физике?','Поведение\x20микрочастиц','nickname-display','Миниатюрный\x20автомобиль','bind','querySelectorAll','Конденсат\x20Бозе\x20—\x20Эйнштейна','Эйнштейн','trace','DOMContentLoaded','padStart','now','Правописание\x20слов','Оно\x20исчезает','constructor','Историю\x20древнего\x20мира','Строение\x20живых\x20организмов','Бозон,\x20создающий\x20антивещество','outerHeight','Гравитационная','apply'];const _0x27e2=function(_0x1f20f8,_0x5e2192){_0x1f20f8=_0x1f20f8-0x1dd;let _0xd025fe=_0x2285[_0x1f20f8];return _0xd025fe;};(function(_0x427703,_0x3c7a2a){const _0x5ac6e2=_0x27e2;while(!![]){try{const _0x5e68d4=parseInt(_0x5ac6e2(0x223))+parseInt(_0x5ac6e2(0x1e5))*-parseInt(_0x5ac6e2(0x232))+-parseInt(_0x5ac6e2(0x208))*-parseInt(_0x5ac6e2(0x239))+parseInt(_0x5ac6e2(0x203))+parseInt(_0x5ac6e2(0x1f5))*parseInt(_0x5ac6e2(0x269))+-parseInt(_0x5ac6e2(0x274))+parseInt(_0x5ac6e2(0x238));if(_0x5e68d4===_0x3c7a2a)break;else _0x427703['push'](_0x427703['shift']());}catch(_0x4bd7b6){_0x427703['push'](_0x427703['shift']());}}}(_0x2285,0x763de),function(){const _0x569b9d=_0x27e2,_0xb58817=function(){let _0x2428bf=!![];return function(_0x1f3dce,_0x413590){const _0x458c5a=_0x2428bf?function(){const _0x1cca15=_0x27e2;if(_0x413590){const _0xa0b028=_0x413590[_0x1cca15(0x255)](_0x1f3dce,arguments);return _0x413590=null,_0xa0b028;}}:function(){};return _0x2428bf=![],_0x458c5a;};}(),_0x575c81=_0xb58817(this,function(){const _0x4dffe1=function(){const _0x5ba3c4=_0x27e2,_0x4d7613=_0x4dffe1['constructor'](_0x5ba3c4(0x1fa))()[_0x5ba3c4(0x24f)](_0x5ba3c4(0x1ed));return!_0x4d7613[_0x5ba3c4(0x1dd)](_0x575c81);};return _0x4dffe1();});_0x575c81();const _0x2257c9=function(){let _0xedf98e=!![];return function(_0x24d897,_0x137741){const _0x282f35=_0xedf98e?function(){const _0xd688a0=_0x27e2;if(_0x137741){const _0x3631a9=_0x137741[_0xd688a0(0x255)](_0x24d897,arguments);return _0x137741=null,_0x3631a9;}}:function(){};return _0xedf98e=![],_0x282f35;};}(),_0x1dd22e=_0x2257c9(this,function(){const _0x124273=_0x27e2,_0x10f62c=function(){const _0x396487=_0x27e2;let _0x5bc67f;try{_0x5bc67f=Function(_0x396487(0x21a)+'{}.constructor(\x22return\x20this\x22)(\x20)'+');')();}catch(_0x1cde65){_0x5bc67f=window;}return _0x5bc67f;},_0x3dc5b0=_0x10f62c(),_0x4ca952=_0x3dc5b0[_0x124273(0x267)]=_0x3dc5b0[_0x124273(0x267)]||{},_0x423411=['log',_0x124273(0x1fc),_0x124273(0x271),_0x124273(0x25f),'exception',_0x124273(0x20b),_0x124273(0x249)];for(let _0x2512cc=0x0;_0x2512cc<_0x423411[_0x124273(0x225)];_0x2512cc++){const _0x131a0d=_0x2257c9[_0x124273(0x24f)]['prototype'][_0x124273(0x245)](_0x2257c9),_0x570e9e=_0x423411[_0x2512cc],_0x53478f=_0x4ca952[_0x570e9e]||_0x131a0d;_0x131a0d[_0x124273(0x277)]=_0x2257c9['bind'](_0x2257c9),_0x131a0d[_0x124273(0x25e)]=_0x53478f[_0x124273(0x25e)][_0x124273(0x245)](_0x53478f),_0x4ca952[_0x570e9e]=_0x131a0d;}});_0x1dd22e();const _0x37c402=[{'q':'Что\x20изучает\x20теоретическая\x20физика?','options':[_0x569b9d(0x24d),_0x569b9d(0x1f6),_0x569b9d(0x250),_0x569b9d(0x251)],'answer':0x1},{'q':'Какой\x20физик\x20известен\x20своим\x20котом,\x20который\x20и\x20жив,\x20и\x20мёртв?','options':[_0x569b9d(0x1e9),_0x569b9d(0x248),_0x569b9d(0x217),_0x569b9d(0x1e6)],'answer':0x2},{'q':_0x569b9d(0x25d),'options':['Обычная\x20точка\x20в\x20пространстве',_0x569b9d(0x23b),_0x569b9d(0x221),_0x569b9d(0x224)],'answer':0x2},{'q':_0x569b9d(0x1f3),'options':[_0x569b9d(0x1e8),'Двигаться\x20с\x20постоянной\x20скоростью',_0x569b9d(0x236),_0x569b9d(0x26d)],'answer':0x0},{'q':_0x569b9d(0x1f7),'options':['Сила\x20удара',_0x569b9d(0x22d),'Связь\x20массы\x20и\x20энергии',_0x569b9d(0x25c)],'answer':0x2},{'q':_0x569b9d(0x215),'options':[_0x569b9d(0x204),_0x569b9d(0x244),_0x569b9d(0x218),_0x569b9d(0x21b)],'answer':0x2},{'q':_0x569b9d(0x25b),'options':[_0x569b9d(0x229),_0x569b9d(0x259),_0x569b9d(0x26c),'Нильс\x20Бор'],'answer':0x2},{'q':_0x569b9d(0x23d),'options':['Электрон',_0x569b9d(0x22f),_0x569b9d(0x227),_0x569b9d(0x1e4)],'answer':0x3},{'q':_0x569b9d(0x241),'options':['Сложный\x20музыкальный\x20аккорд',_0x569b9d(0x20f),_0x569b9d(0x210),'Перемещение\x20в\x20пространстве'],'answer':0x1},{'q':_0x569b9d(0x258),'options':['Стивен\x20Хокинг',_0x569b9d(0x1e7),_0x569b9d(0x205),_0x569b9d(0x202)],'answer':0x1},{'q':_0x569b9d(0x1ec),'options':[_0x569b9d(0x240),_0x569b9d(0x207),'В\x20пространстве-времени',_0x569b9d(0x1df)],'answer':0x2},{'q':'Что\x20изучает\x20квантовая\x20механика?','options':['Большие\x20объекты','Метеорологию',_0x569b9d(0x242),_0x569b9d(0x1f8)],'answer':0x2},{'q':_0x569b9d(0x23a),'options':[_0x569b9d(0x1f1),'Глюон',_0x569b9d(0x212),_0x569b9d(0x213)],'answer':0x2},{'q':_0x569b9d(0x263),'options':[_0x569b9d(0x20c),'Частица,\x20придающая\x20массу\x20другим',_0x569b9d(0x226),_0x569b9d(0x252)],'answer':0x1},{'q':_0x569b9d(0x256),'options':['Принцип\x20суперпозиции','Принцип\x20неопределённости\x20Гейзенберга',_0x569b9d(0x1ff),'Закон\x20Ома'],'answer':0x1},{'q':'Что\x20происходит\x20с\x20временем\x20при\x20приближении\x20к\x20чёрной\x20дыре?','options':['Оно\x20ускоряется','Оно\x20замедляется',_0x569b9d(0x24e),_0x569b9d(0x261)],'answer':0x1},{'q':_0x569b9d(0x21c),'options':[_0x569b9d(0x233),_0x569b9d(0x237),_0x569b9d(0x201),'Модель\x20планетной\x20орбиты'],'answer':0x1},{'q':_0x569b9d(0x26a),'options':['Протон','Нейтрон',_0x569b9d(0x220),_0x569b9d(0x1e0)],'answer':0x2},{'q':_0x569b9d(0x200),'options':['Электромагнитная',_0x569b9d(0x22b),'Слабая',_0x569b9d(0x254)],'answer':0x3},{'q':_0x569b9d(0x1eb),'options':['Газ\x20Ньютона',_0x569b9d(0x247),_0x569b9d(0x1f4),_0x569b9d(0x1ef)],'answer':0x1}];let _0x553113=[],_0x345926=0x0,_0x105035=0xa,_0x1560ea,_0x2dbc2e,_0x1de9ea='',_0xfb9ca7=![],_0x48e6fe=0x0;const _0x3983ab=0xa,_0xdba03d=document[_0x569b9d(0x22c)](_0x569b9d(0x21d)),_0x51df4c=document[_0x569b9d(0x22c)](_0x569b9d(0x243)),_0x4979c1=document['getElementById'](_0x569b9d(0x23f)),_0x55780a=document[_0x569b9d(0x22c)]('options'),_0x384a0c=document[_0x569b9d(0x22c)](_0x569b9d(0x216)),_0x29fb69=document[_0x569b9d(0x22c)]('time-left'),_0x5b9121=document[_0x569b9d(0x22c)](_0x569b9d(0x268));function _0x4c903b(){const _0x2c0fe6=_0x569b9d,_0xa9efba=new Date();return _0xa9efba[_0x2c0fe6(0x1fb)]()+'-'+String(_0xa9efba[_0x2c0fe6(0x266)]()+0x1)['padStart'](0x2,'0')+'-'+String(_0xa9efba[_0x2c0fe6(0x219)]())[_0x2c0fe6(0x24b)](0x2,'0')+'\x20'+String(_0xa9efba[_0x2c0fe6(0x234)]())['padStart'](0x2,'0')+':'+String(_0xa9efba['getMinutes']())[_0x2c0fe6(0x24b)](0x2,'0')+':'+String(_0xa9efba[_0x2c0fe6(0x1f9)]())['padStart'](0x2,'0');}function _0x21cc8a(){const _0x2f8ec4=_0x569b9d,_0x49871d=JSON['parse'](localStorage[_0x2f8ec4(0x206)](_0x2f8ec4(0x1de))||'[]');_0x5b9121['innerHTML']='',_0x49871d['filter'](_0x20e51f=>typeof _0x20e51f==='string'&&_0x20e51f[_0x2f8ec4(0x214)](/^\[\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\]\s.+\sзаработал\s\d+\sочков!$/))[_0x2f8ec4(0x264)](-_0x3983ab)['forEach'](_0x329035=>{const _0x3c15e2=_0x2f8ec4,_0x3721a7=document[_0x3c15e2(0x230)]('li');_0x3721a7[_0x3c15e2(0x275)]=_0x329035,_0x5b9121[_0x3c15e2(0x1f0)](_0x3721a7);});}function _0x419dd3(){const _0x5cc3d9=_0x569b9d,_0x7a3828=Array[_0x5cc3d9(0x1f2)](_0x5b9121[_0x5cc3d9(0x20e)])[_0x5cc3d9(0x222)](_0x1a2d0a=>_0x1a2d0a['textContent']);localStorage[_0x5cc3d9(0x265)](_0x5cc3d9(0x1de),JSON[_0x5cc3d9(0x26f)](_0x7a3828));}function _0x48ef7c(_0x279787){const _0x2e9dc7=_0x569b9d;if(_0x279787<0x0||_0x279787!==Math[_0x2e9dc7(0x1ea)](_0x279787)||_0x279787!==_0x48e6fe+0x1){_0x1b61cf();return;}_0x345926=_0x279787,_0x48e6fe=_0x279787,_0x384a0c[_0x2e9dc7(0x275)]=_0x345926;}function _0x5813e3(){const _0x48d59e=_0x569b9d;let _0x24974b=![];const _0x5a4794=0xa0,_0x3f1d49=()=>{const _0x40b8e0=_0x27e2;(window[_0x40b8e0(0x260)]-window[_0x40b8e0(0x276)]>_0x5a4794||window[_0x40b8e0(0x253)]-window[_0x40b8e0(0x209)]>_0x5a4794)&&(_0x24974b=!![],_0x1b61cf());},_0x48612c=()=>{const _0x5ca726=_0x27e2;let _0x56bb6f=performance[_0x5ca726(0x24c)]();console[_0x5ca726(0x228)](_0x5ca726(0x1dd)),console[_0x5ca726(0x22a)](_0x5ca726(0x1dd)),performance[_0x5ca726(0x24c)]()-_0x56bb6f>0x64&&(_0x24974b=!![],_0x1b61cf());};window[_0x48d59e(0x26b)](_0x48d59e(0x1fd),_0x3f1d49),setInterval(_0x48612c,0x3e8);}function _0x2f5971(){const _0x224586=_0x569b9d;_0x1de9ea=_0xdba03d[_0x224586(0x262)]['trim']();if(_0x1de9ea===''){alert('Введите\x20никнейм');return;}_0x345926=0x0,_0x48e6fe=0x0,_0x105035=0xa,_0x553113=[..._0x37c402],_0x48ef7c(0x0),document[_0x224586(0x22c)](_0x224586(0x211))[_0x224586(0x1ee)]['display']=_0x224586(0x270),document['getElementById'](_0x224586(0x25a))[_0x224586(0x1ee)]['display']=_0x224586(0x23e),document[_0x224586(0x22c)](_0x224586(0x257))[_0x224586(0x1ee)][_0x224586(0x26e)]='none',_0x51df4c['textContent']=_0x224586(0x1fe)+_0x1de9ea,_0x5813e3(),_0x10fb7a();}function _0x10fb7a(){const _0x483e31=_0x569b9d;clearInterval(_0x1560ea),_0xfb9ca7=![],_0x105035=0xa;if(_0x553113[_0x483e31(0x225)]===0x0){_0x1b61cf();return;}const _0x9d61f1=Math[_0x483e31(0x1ea)](Math[_0x483e31(0x235)]()*_0x553113[_0x483e31(0x225)]);_0x2dbc2e=_0x553113[_0x9d61f1],_0x553113[_0x483e31(0x21f)](_0x9d61f1,0x1),_0x4979c1[_0x483e31(0x275)]=_0x2dbc2e['q'],_0x55780a['innerHTML']='',_0x2dbc2e[_0x483e31(0x273)][_0x483e31(0x23c)]((_0x1a1ca7,_0xd9986d)=>{const _0x2099a8=_0x483e31,_0x3d1308=document[_0x2099a8(0x230)]('button');_0x3d1308['textContent']=_0x1a1ca7,_0x3d1308[_0x2099a8(0x1e1)]=()=>_0x14f302(_0xd9986d,_0x3d1308),_0x55780a['appendChild'](_0x3d1308);}),_0x29fb69[_0x483e31(0x275)]=_0x105035[_0x483e31(0x272)](0x1),_0x2613bf();}function _0x2613bf(){let _0x74da8a=_0x105035;_0x29fb69['textContent']=_0x74da8a['toFixed'](0x1),_0x1560ea=setInterval(()=>{const _0x1697d3=_0x27e2;_0x74da8a-=0.1,_0x29fb69[_0x1697d3(0x275)]=_0x74da8a[_0x1697d3(0x272)](0x1),_0x74da8a<=0x0&&(clearInterval(_0x1560ea),_0x1b61cf());},0x64);}function _0x14f302(_0x3f7920,_0x3127eb){const _0x43a89e=_0x569b9d;if(_0xfb9ca7)return;_0xfb9ca7=!![],clearInterval(_0x1560ea);const _0x26d6f5=_0x55780a[_0x43a89e(0x246)]('button');_0x26d6f5[_0x43a89e(0x23c)](_0x1f08b9=>_0x1f08b9[_0x43a89e(0x231)]=!![]),_0x3f7920===_0x2dbc2e[_0x43a89e(0x20d)]?(_0x48ef7c(_0x345926+0x1),setTimeout(()=>{_0x10fb7a();},0x1f4)):_0x1b61cf();}function _0x1b61cf(){const _0x3e30c2=_0x569b9d;clearInterval(_0x1560ea),document[_0x3e30c2(0x22c)]('game-container')['style']['display']=_0x3e30c2(0x270),document[_0x3e30c2(0x22c)](_0x3e30c2(0x257))['style'][_0x3e30c2(0x26e)]=_0x3e30c2(0x23e),document['getElementById'](_0x3e30c2(0x1e2))['textContent']=_0x1de9ea+',\x20ваш\x20результат:\x20'+_0x345926+_0x3e30c2(0x21e),_0x1b5603('['+_0x4c903b()+']\x20'+_0x1de9ea+'\x20заработал\x20'+_0x345926+_0x3e30c2(0x22e)),_0x21cc8a();}function _0x59c4e8(){const _0x51a42c=_0x569b9d;_0x345926=0x0,_0x48e6fe=0x0,_0x105035=0xa,_0x553113=[..._0x37c402],_0xfb9ca7=![],_0x2dbc2e=null,clearInterval(_0x1560ea),_0x48ef7c(0x0),_0xdba03d[_0x51a42c(0x262)]='',document[_0x51a42c(0x22c)](_0x51a42c(0x211))['style'][_0x51a42c(0x26e)]=_0x51a42c(0x23e),document[_0x51a42c(0x22c)](_0x51a42c(0x25a))[_0x51a42c(0x1ee)][_0x51a42c(0x26e)]=_0x51a42c(0x270),document[_0x51a42c(0x22c)]('game-over')['style'][_0x51a42c(0x26e)]=_0x51a42c(0x270);}function _0x1b5603(_0x376554){const _0x727165=_0x569b9d,_0x4fe3da=document[_0x727165(0x230)]('li');_0x4fe3da[_0x727165(0x275)]=_0x376554,_0x5b9121['appendChild'](_0x4fe3da);while(_0x5b9121[_0x727165(0x20e)][_0x727165(0x225)]>_0x3983ab){_0x5b9121['removeChild'](_0x5b9121['firstChild']);}_0x419dd3();}window[_0x569b9d(0x20a)]=_0x2f5971,window[_0x569b9d(0x1e3)]=_0x59c4e8,document[_0x569b9d(0x26b)](_0x569b9d(0x24a),_0x21cc8a);}());
+  let questionSet = [];
+  let score = 0;
+  let time = 10;
+  let timer;
+  let currentQuestion;
+  let nickname = "";
+  let isAnswerProcessing = false;
+  let scoreChecksum = 0;
+  const maxLogLines = 10;
+
+  const nicknameInput = document.getElementById("nickname-input");
+  const nicknameDisplay = document.getElementById("nickname-display");
+  const questionDiv = document.getElementById("question");
+  const optionsDiv = document.getElementById("options");
+  const scoreSpan = document.getElementById("score-value");
+  const timeSpan = document.getElementById("time-left");
+  const logList = document.getElementById("log-list");
+
+  // Форматирование даты и времени
+  function formatDateTime() {
+    const now = new Date();
+    return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
+  }
+
+  // Инициализация логов
+  function initLogs() {
+    const savedLogs = JSON.parse(localStorage.getItem("gameLogs") || "[]");
+    logList.innerHTML = "";
+    savedLogs
+      .filter(log => typeof log === "string" && log.match(/^\[\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}\]\s.+\sзаработал\s\d+\sочков!$/))
+      .slice(-maxLogLines)
+      .forEach(log => {
+        const li = document.createElement("li");
+        li.textContent = log;
+        logList.appendChild(li);
+      });
+  }
+
+  // Сохранение логов
+  function saveLogs() {
+    const logs = Array.from(logList.children).map(li => li.textContent);
+    localStorage.setItem("gameLogs", JSON.stringify(logs));
+  }
+
+  // Обновление счета с проверкой
+  function updateScore(value) {
+    if (value < 0 || value !== Math.floor(value) || value !== scoreChecksum + 1) {
+      gameOver();
+      return;
+    }
+    score = value;
+    scoreChecksum = value;
+    scoreSpan.textContent = score;
+  }
+
+  // Обнаружение DevTools
+  function detectDevTools() {
+    let devtoolsOpen = false;
+    const threshold = 160; // Порог изменения размера окна
+
+    // Проверка изменения размера окна
+    const checkWindowSize = () => {
+      if (
+        window.outerWidth - window.innerWidth > threshold ||
+        window.outerHeight - window.innerHeight > threshold
+      ) {
+        devtoolsOpen = true;
+        gameOver();
+      }
+    };
+
+    // Проверка через console
+    const consoleCheck = () => {
+      let start = performance.now();
+      console.profile('test');
+      console.profileEnd('test');
+      if (performance.now() - start > 100) {
+        devtoolsOpen = true;
+        gameOver();
+      }
+    };
+
+    window.addEventListener('resize', checkWindowSize);
+    setInterval(consoleCheck, 1000);
+  }
+
+  function startGame() {
+    nickname = nicknameInput.value.trim();
+    if (nickname === "") {
+      alert("Введите никнейм");
+      return;
+    }
+
+    score = 0;
+    scoreChecksum = 0;
+    time = 10;
+    questionSet = [...questionSetOriginal];
+    updateScore(0);
+
+    document.getElementById("nickname-container").style.display = "none";
+    document.getElementById("game-container").style.display = "block";
+    document.getElementById("game-over").style.display = "none";
+    nicknameDisplay.textContent = `Игрок: ${nickname}`;
+    detectDevTools(); // Запускаем обнаружение DevTools
+    nextQuestion();
+  }
+
+  function nextQuestion() {
+    clearInterval(timer);
+    isAnswerProcessing = false;
+    time = 15; // Устанавливаем время 10 секунд для каждого вопроса
+
+    if (questionSet.length === 0) {
+      gameOver();
+      return;
+    }
+
+    const index = Math.floor(Math.random() * questionSet.length);
+    currentQuestion = questionSet[index];
+    questionSet.splice(index, 1);
+
+    questionDiv.textContent = currentQuestion.q;
+    optionsDiv.innerHTML = "";
+
+    currentQuestion.options.forEach((opt, idx) => {
+      const btn = document.createElement("button");
+      btn.textContent = opt;
+      btn.onclick = () => checkAnswer(idx, btn);
+      optionsDiv.appendChild(btn);
+    });
+
+    timeSpan.textContent = time.toFixed(1);
+    startTimer();
+  }
+
+  function startTimer() {
+    let remaining = time;
+    timeSpan.textContent = remaining.toFixed(1);
+
+    timer = setInterval(() => {
+      remaining -= 0.1;
+      timeSpan.textContent = remaining.toFixed(1);
+
+      if (remaining <= 0) {
+        clearInterval(timer);
+        gameOver();
+      }
+    }, 100);
+  }
+
+  function checkAnswer(selected, btn) {
+    if (isAnswerProcessing) return;
+    isAnswerProcessing = true;
+
+    clearInterval(timer);
+
+    const allButtons = optionsDiv.querySelectorAll("button");
+    allButtons.forEach(b => b.disabled = true);
+
+    if (selected === currentQuestion.answer) {
+      updateScore(score + 1);
+
+      setTimeout(() => {
+        nextQuestion();
+      }, 500);
+    } else {
+      gameOver();
+    }
+  }
+
+  function gameOver() {
+    clearInterval(timer);
+    document.getElementById("game-container").style.display = "none";
+    document.getElementById("game-over").style.display = "block";
+    document.getElementById("final-score").textContent = `${nickname}, ваш результат: ${score} очков`;
+    addLog(`[${formatDateTime()}] ${nickname} заработал ${score} очков!`);
+    initLogs();
+  }
+
+  function retry() {
+    // Сбрасываем игровые переменные
+    score = 0;
+    scoreChecksum = 0;
+    time = 10;
+    questionSet = [...questionSetOriginal];
+    isAnswerProcessing = false;
+    currentQuestion = null;
+    clearInterval(timer);
+
+    // Обновляем интерфейс
+    updateScore(0);
+    nicknameInput.value = "";
+    document.getElementById("nickname-container").style.display = "block";
+    document.getElementById("game-container").style.display = "none";
+    document.getElementById("game-over").style.display = "none";
+  }
+
+  function addLog(text) {
+    const li = document.createElement("li");
+    li.textContent = text;
+    logList.appendChild(li);
+
+    while (logList.children.length > maxLogLines) {
+      logList.removeChild(logList.firstChild);
+    }
+
+    saveLogs();
+  }
+
+  window.startGame = startGame;
+  window.retry = retry;
+
+  document.addEventListener("DOMContentLoaded", initLogs);
+})();
