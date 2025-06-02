@@ -40,13 +40,13 @@
   const timeSpan = document.getElementById("time-left");
   const logList = document.getElementById("log-list");
 
-  // Форматирование даты и времени
+  
   function formatDateTime() {
     const now = new Date();
     return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')} ${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
   }
 
-  // Инициализация логов
+  
   function initLogs() {
     const savedLogs = JSON.parse(localStorage.getItem("gameLogs") || "[]");
     logList.innerHTML = "";
@@ -60,13 +60,13 @@
       });
   }
 
-  // Сохранение логов
+ 
   function saveLogs() {
     const logs = Array.from(logList.children).map(li => li.textContent);
     localStorage.setItem("gameLogs", JSON.stringify(logs));
   }
 
-  // Обновление счета с проверкой
+  
   function updateScore(value) {
     if (value < 0 || value !== Math.floor(value) || value !== scoreChecksum + 1) {
       gameOver();
@@ -93,7 +93,7 @@
       }
     };
 
-    // Проверка через console
+    
     const consoleCheck = () => {
       let start = performance.now();
       console.profile('test');
@@ -202,7 +202,7 @@
   }
 
   function retry() {
-    // Сбрасываем игровые переменные
+    
     score = 0;
     scoreChecksum = 0;
     time = 10;
